@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <BrowserRouter >
       <Routes>
-        <Route path='/touchType' element={<Input />}></Route>
+        <Route path='/' element={<Input />}></Route>
       </Routes>
       </BrowserRouter>
     </div>
