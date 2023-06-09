@@ -15,11 +15,11 @@ const Input = () => {
 	const [letterCount, setLetterCount] = useState(2);
 
 	//Audio elements for Sound
-	const correctSound = new Audio("/sounds/correct.mp3");
-	const incorrectSound = new Audio("/sounds/incorrect.mp3");
-	const keySound = new Audio("/sounds/key-sound.mp3");
+	const correctSound = new Audio("./sounds/correct.mp3");
+	const incorrectSound = new Audio("./sounds/incorrect.mp3");
+	const keySound = new Audio("./sounds/key-sound.mp3");
 
-	//Timing and ccuracy Variables
+	//Timing and accuracy Variables
 	const [startTime, setStartTime] = useState(null);
 	const [endTime, setEndTime] = useState(null);
 	const [totalChars, setTotalChars] = useState(0);
