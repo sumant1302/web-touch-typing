@@ -1,12 +1,298 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+  background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nav-ul li{
+  display: inline-block;
+  padding: 10px;
+}
+.nav-ul {
+  padding: 0;
+    margin: 0;
+    background: skyblue;
+}
+
+.nav-ul li a {
+  padding: 5px;
+  color: #fff;
+  font-style: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.nav-right {
+  text-align: right;
+}
+.error-input {
+  color: red;
+  font: 6px;
+  margin-top: -20px ;
+  margin-left: 20px;
+  font-style: italic;
+  display: block;
+}
+img.logo {
+  width: 40px;
+    float: left;
+    padding: 5px;
+    margin-right: 2px;
+    margin-left: 4px;
+    border-radius: 50%;
+}
+
+.div-footer {
+  position: absolute;
+    background-color: skyblue;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+.div-footer > * {
+  margin: 4px;
+}
+.div-footer p {
+  font-style: italic;
+}
+
+div.input-boxes {
+  display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center
+}
+.inputBox-printText {
+  display: block;
+  padding: 7px;
+  margin: 15px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.8rem;
+  background-color: #d914d9;
+  color: white;
+  outline: none;
+  width: 50vw;
+  line-height: 5vh;
+  border: 2px solid rgb(192, 19, 211);
+  border-radius: 2.5vh;
+}
+.inputBox-text {
+  display: block;
+  padding: 7px;
+  margin:10px 5px 15px 5px;
+  text-align: center;
+  font-weight: bold;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
+  width: 60vw;
+  line-height: 6vh;
+  outline: none;
+  border: 2px solid rgb(79, 33, 232);
+}
+
+.button-signup {
+  cursor: pointer;
+    margin: 25px;
+    padding: 10px;
+    width: 300px;
+    background: skyblue;
+    border: 1px solid;
+    border-radius: 2px;
+}
+/* InputChar CSS */
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-display {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
+.keyboard {
+  display: flex;
+  justify-content: center;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.key:hover {
+  background-color: #ccc;
+}
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+.counts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counts > * {
+  width: 200px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.div-count {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid black;
+}
+.div-threshold {
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    
+}
+.div-threshold input {
+  width: 60%;
+  min-height: 30px;
+  font-style: italic;
+
+}
+.div-threshold label {
+  font-style: normal;
+  font-weight:400;
+}
+.div-threshold h3 {
+  margin: 4px;
+}
+.div-count select {
+  width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: white;  
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 110%;
+}
+.count-span {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+}
+
+
+img.correctTick {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+div.custom-input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: inline-flex;  
+  align-items: center;
+  justify-content: center;
+  background-color:rgb(24, 22, 22,0.8); 
+  z-index: 1;
+}
+div.custom-contain {
+  width: 60%;
+  height: 50%;
+  margin: 15% 25%;
+  position: absolute;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(97, 156, 158,0.8);
+  border-radius: 10px;
+}
+
+span.close {
+  position: absolute;
+  right: 0;
+  margin: 2%;
+}
+.custom-inp {
+  align-items: center;
+  justify-content: center;
+  display:block;
+}
+.custom-inp > *{
+  align-items: center;
+  justify-content: center;
+}
+.custom-area {
+  width: 60%;
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  outline: none;
+  border: 2px solid rgb(253, 15, 198);
+}
+button.custom-submit {
+  width: 10rem;
+  height: 3rem;
+  background-color: #098639;
+  font-size: 20px;
+  font-style: oblique;
+  color: white;
+  margin: 5%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ul.keys {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+ul.keys li {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  margin: 5px;
+  padding: 4px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 4px;
+  color: white;
+}
+li.k-black{
+  background-color: #282c34;
+}
+li.k-green{
+  background-color: greenyellow;
+}
+ul.k-space li{
+  width: 40%;
+  font-size: 1.2rem;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +321,41 @@
   to {
     transform: rotate(360deg);
   }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.5s ease-in;
+}
+span.close {
+  position: absolute;
+  right: 0;
+}
+span.soundButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  font-size: 1.4rem;
+}
+.soundButton img {
+  width: 40px;
+  height: 40px;
+}
+
+.results p{
+  display: inline;
+  padding:0 5%;
+  text-align: center;
+  font-size: 1.3rem;
+  color: rgb(162, 158, 65);
+  font-weight: 500;
+}
+span.next {
+  font-size: 2rem;
+}
+span.timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px;
 }

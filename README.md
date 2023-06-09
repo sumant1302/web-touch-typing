@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+## Input Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This component represents the main typing lesson interface where users can practice their typing skills. It includes the following functionalities:
 
-## Available Scripts
+1. Random Sentence Generation:
 
-In the project directory, you can run:
+   - The component generates a random sentence based on the specified word count and letter count.
+   - The sentence can be generated using either words or individual letters.
+   - The generated sentence is displayed for the user to type.
 
-### `npm start`
+2. Typing Input:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   - The user can input their typing in the text input field.
+   - The input is stored in the `text` state variable.
+   - Sound effects are played when the user types (if sound is enabled).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Accuracy and Words Per Minute (WPM) Calculation:
 
-### `npm test`
+   - The component calculates the accuracy and WPM of the user's typing.
+   - Accuracy is calculated based on the percentage of correct characters compared to the total characters typed.
+   - WPM is calculated based on the number of words typed and the time taken.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Lesson Progress and Thresholds:
 
-### `npm run build`
+   - The component keeps track of the lesson count, word count, and letter count.
+   - Thresholds for WPM and accuracy are set and incremented as the user completes lessons.
+   - The current lesson count and thresholds are displayed in the UI.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Lesson Restart and Completion:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   - The user can restart the lesson at any time, which resets the input and generates a new random sentence.
+   - When the user completes the lesson (input matches the generated sentence), the lesson count and thresholds are updated, and a new random sentence is generated.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Stopwatch:
 
-### `npm run eject`
+   - A stopwatch component displays the elapsed time during the lesson.
+   - The start time is recorded when the user starts typing, and the end time is recorded when the input matches the generated sentence.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+7. Sound Toggle:
+   - The user can toggle sound effects on/off using the sound icon in the footer.
+   - The sound preference is saved in the local storage for future sessions.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To use this component, simply import it and place it in your application where you want to provide a typing lesson interface. Make sure to include the required dependencies and customize the thresholds, word count, and letter count according to your requirements.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```jsx
+import Input from "./Input";
 
-## Learn More
+function App() {
+	return (
+		<div className="App">
+			<Input />
+		</div>
+	);
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+export default App;
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## StopWatch Component
 
-### Code Splitting
+The Stopwatch component provides the ability to track and display the elapsed time between the startTime and endTime props. You can integrate it into your application to show the elapsed time while the user is typing or performing certain actions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To create a README for this component, you can provide a brief description of its purpose and usage, along with any additional information or instructions. Here's an example:
 
-### Analyzing the Bundle Size
+The Stopwatch component is a React component that displays the elapsed time in hours, minutes, and seconds. It can be used to track time for various purposes in your application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Usage
 
-### Making a Progressive Web App
+```jsx
+Import the Stopwatch component:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+import Stopwatch from './Stopwatch';
 
-### Advanced Configuration
+//Integrate the Stopwatch component into your application:
+<Stopwatch startTime={/* startTime value */} endTime={/* endTime value */} />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
+-> startTime (number): The start time in milliseconds. Pass null if the stopwatch is not running.
+-> endTime (number): The end time in milliseconds. Pass null if the stopwatch has not finished yet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The Stopwatch component will display the formatted elapsed time based on the provided start and end times.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# CustomInp Component
+
+The CustomInp component is a React component that renders a custom input area with a text area, a submit button, and a close button. It allows the user to enter custom text and perform actions based on that input.
+
+## Usage
+
+1. Import the CustomInp component:
+
+   ```jsx
+   import CustomInp from './CustomInp';
+   //Integrate the CustomInp component into your application:
+
+    <CustomInp onInput={/* handleInput function */} />
+   ```
