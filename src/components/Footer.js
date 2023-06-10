@@ -1,4 +1,5 @@
 import React from "react";
+import { ExternalLink } from "react-external-link";
 
 const Footer = () => {
 	return (
@@ -6,7 +7,10 @@ const Footer = () => {
 			<h3>
 				©️Web Touch Typing <sup>TM</sup>
 			</h3>
-            <p>Created with ❤️ by Sumant Kumar</p>
+			<p>
+				Created with ❤️ by{" "}
+				<ExternalLink href="https://github.com/sumant1302">Sumant Kumar</ExternalLink>
+			</p>
 		</div>
 	);
 };
