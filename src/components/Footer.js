@@ -6,7 +6,7 @@ const Footer = () => {
 			<h3>
 				©️Web Touch Typing <sup>TM</sup>
 			</h3>
-			<p>Created with ❤️ by Sumant Kumar</p>
+            <p>Created with ❤️ by Sumant Kumar</p>
 		</div>
 	);
 };
