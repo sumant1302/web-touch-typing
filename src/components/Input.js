@@ -26,11 +26,14 @@ const Input = () => {
 
 	const [thresWPM, setThresWPM] = useState(40);
 	const [thresAccuracy, setThresAccuracy] = useState(60);
-	const [lastWPM, setLastWPM] = useState(40);
-	const [lastAccuracy, setLastAccuracy] = useState(60);
+	const [lastWPM, setLastWPM] = useState(0);
+	const [lastAccuracy, setLastAccuracy] = useState(0);
+
+	const [avgWPM, setAvgWPM] = useState(0);
 
 	//Lesson Count
 	const [lessonCount, setLessonCount] = useState(1);
+
 	//Letters
 	const letters = ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";"];
 
@@ -89,7 +92,6 @@ const Input = () => {
 		} else {
 			words = printText.split(" ").length;
 		}
-		console.warn("words->" + words);
 
 		return Math.round(words / minutes);
 	};
@@ -104,8 +106,6 @@ const Input = () => {
 		} else {
 			setEndTime(null);
 		}
-		console.warn("Start -> " + startTime);
-		console.warn("End->" + endTime);
 	};
 	//Handle Key press event
 	const handleText = (e) => {
@@ -176,11 +176,7 @@ const Input = () => {
 		setLetterCount(0);
 	};
 	const customWordCount = (val) => {
-		if (val === 0) {
-			customText();
-		} else {
 			setWordCount(val);
-		}
 	};
 
 	//Handle reset of text with tab & esc keys
@@ -223,20 +219,30 @@ const Input = () => {
 		if (endTime) {
 			setLastAccuracy(calculateAccuracy());
 			setLastWPM(calculateWPM());
-			console.warn(3);
+		}
+		if (calculateAccuracy() > thresAccuracy && calculateWPM() > thresWPM) {
+			setLessonCount(lessonCount + 1);
+		}  else {
+					setText("");
+					setTotalChars(0);
+					setStartTime(null);
+		}
+		if (calculateWPM() < 1000) {
+			setAvgWPM(Math.round((calculateWPM() + avgWPM) / 2));
 		}
 	}, [endTime]);
 	useEffect(() => {
-		if (lastAccuracy > thresAccuracy && lastWPM > thresWPM) {
-			setLessonCount(lessonCount + 1);
-			console.warn("1");
-		} else {
-			setText("");
-			setTotalChars(0);
-			setStartTime(null);
-			console.warn(2);
-		}
-	}, [lastAccuracy, lastWPM]);
+		setLessonCount(1);
+	}, [letterCount, wordCount]);
+	// useEffect(() => {
+	// 	if (lastAccuracy > thresAccuracy && lastWPM > thresWPM) {
+	// 		setLessonCount(lessonCount + 1);
+	// 	} else {
+	// 		setText("");
+	// 		setTotalChars(0);
+	// 		setStartTime(null);
+	// 	}
+	// }, [lastAccuracy, lastWPM]);
 
 	return (
 		<div>
@@ -353,8 +359,9 @@ const Input = () => {
 				)}
 			</div>
 			<div className="results">
-				<p>Accuracy : {lessonCount > 1 ? lastAccuracy : 0}%</p>
-				<p>WPM: {lessonCount > 1 ? lastWPM : 0}</p>
+				<p>Accuracy : {lastAccuracy}%</p>
+				<p>WPM: {lastWPM}</p>
+				<p>Average WPM: {avgWPM}</p>
 			</div>
 			<Footer />
 		</div>

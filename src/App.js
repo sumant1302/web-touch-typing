@@ -1,11 +1,16 @@
 import './App.css';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 
 import Input from './components/Input';
 
 function App() {
   return (
     <div className="App">
-      <Input />
+      <HashRouter>
+        <Routes>
+          <Route path='/' element={<Input />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
