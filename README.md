@@ -1,3 +1,14 @@
+# Touch Type
+
+Introducing "TouchType," a charming and efficient typing website built with React that focuses on simplicity while providing a platform for practicing and improving your typing skills.
+
+TouchType offers a clean and intuitive user interface that allows you to dive straight into typing exercises without any unnecessary distractions. The website's minimalist design ensures a seamless experience, allowing you to concentrate solely on sharpening your typing abilities.
+
+With TouchType, you can choose from a variety of engaging typing exercises designed to enhance your speed and accuracy. Each exercise presents you with carefully selected sentences that progressively challenge your skills. Whether you're a beginner or an experienced typist, TouchType adjusts the difficulty level to suit your proficiency, ensuring that you're constantly motivated and engaged.
+
+TouchType provides real-time feedback, enabling you to track your progress as you type. Instantly receive information about your typing speed and accuracy, allowing you to identify areas that need improvement. With this valuable feedback, you can focus on enhancing your weak points and measuring your improvement over time.
+
+### Explanation for the code and functionalities used
 ## Input Component
 
 This component represents the main typing lesson interface where users can practice their typing skills. It includes the following functionalities:
@@ -103,10 +114,13 @@ The CustomInp component is a React component that renders a custom input area wi
 ---
 
 ## Note - 
-### The app is completed yet. It needs some more minor changes but most of the functionalities would remain the same.
+### This is a compact version of the app. The app is completed yet. It needs some more changes and fixes but most of the functionalities would remain the same along with increasing the keys count to all the letters and symbols.
 
 ---
 
 ### Website Link 
 #### https://touchtype-93286.web.app/
 
+---
+
+### Hope you found the website helpful 🤞
