@@ -99,5 +99,14 @@ The CustomInp component is a React component that renders a custom input area wi
 
     <CustomInp onInput={/* handleInput function */} />
    ```
-------------
-The app is completed yet. It needs some more minor changes but most of the functionslities would remain the same.S
+
+---
+
+## Note - 
+### The app is completed yet. It needs some more minor changes but most of the functionalities would remain the same.
+
+---
+
+### Website Link 
+## https://touchtype-93286.web.app/
+
